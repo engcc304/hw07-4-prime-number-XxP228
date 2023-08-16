@@ -14,3 +14,33 @@
     Output:
         97 89 83 79 73 71 67 61 59 53 47 43 41 37 31 29 23 19 17 13 11 7 5 3 2
 */
+#include <stdio.h>
+int main () {
+    int limit;
+
+    printf("Enter number: ");
+    scanf("%d", &limit);
+
+    int num = limit;
+    int is_prime = 1;
+    do{
+        int i = 2 ;
+        if (num >= 2) {
+            for ( int i = 2; i * i <= num; i++ ) {
+                if (num % i == 0) {
+                    is_prime = 0;
+                    break;
+                }
+            }
+        }
+
+        if (is_prime) {
+            printf("%d ", num);
+        }
+
+        is_prime = 1;
+        num -- ;
+    } while (num >= 2);
+
+    return 0 ;
+}
